@@ -6,13 +6,22 @@ Authors@R: person("Nick", "Strayer", email = "nick.strayer@gmail.com", role = c(
 Description: A conglomeration of all the mini functions and packages that I use
     on a daily basis
 Depends:
-    R (>= 3.3.0)
+    R (>= 3.3.0),
+    rvest,
+    tidyr,
+    stringr,
+    ggplot2,
+    utils,
+    reshape2,
+    zoo,
+    lubridate,
+    scales
 Imports:
 	dplyr,
     ggplot2,
     tidyr,
     stringr,
-    reshape2, 
+    reshape2,
     lubridate
 License: MIT? I dunno
 Encoding: UTF-8

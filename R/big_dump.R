@@ -1,27 +1,22 @@
 #My go to file with a bunch of R things I need
 
 #Libraries
-library(stats)
-library(rvest)
-library(dplyr)
-library(tidyr)
-library(stringr)
-library(downloader)
-library(ggplot2)
-library(rgdal)
-library(sp)
-library(maptools)
-library(utils)
-library(reshape2)
-library(zoo)
-library(lubridate)
-library(scales)
+#' @import stats
+#' @import rvest
+#' @import tidyr
+#' @import stringr
+#' @import ggplot2
+#' @import utils
+#' @import reshape2
+#' @import zoo
+#' @import lubridate
+#' @import scales
 
 #GGplot theme
 #Dem repub colors
 cbPalette <- c("#3989cb", "#d75c5c")
 
-#' One of many ggplot themes that make illustrator easier to use later. 
+#' One of many ggplot themes that make illustrator easier to use later.
 #'
 #' ggplot needs to be stopped!
 #' @keywords ggplot2 plotting
@@ -29,7 +24,7 @@ cbPalette <- c("#3989cb", "#d75c5c")
 #' @examples
 #' ggplot(...) + theme_nytge()
 theme_nyt <- function(base_size = 12, base_family = "Helvetica"){
-  theme_bw(base_size = base_size, base_family = base_family) %+replace% 
+  theme_bw(base_size = base_size, base_family = base_family) %+replace%
     theme(strip.background = element_rect(fill = alpha('white', 0.001)),
           axis.line = element_line(colour = "black"),
           axis.ticks=element_blank(),
@@ -40,7 +35,7 @@ theme_nyt <- function(base_size = 12, base_family = "Helvetica"){
 }
 
 
-#' One of many ggplot themes that make illustrator easier to use later. 
+#' One of many ggplot themes that make illustrator easier to use later.
 #'
 #' ggplot needs to be stopped!
 #' @keywords ggplot2 plotting
@@ -48,20 +43,20 @@ theme_nyt <- function(base_size = 12, base_family = "Helvetica"){
 #' @examples
 #' ggplot(...) + theme_nyt_no_horiz()
 theme_nyt_no_horiz <- function(base_size = 12, base_family = "Helvetica"){
-  theme_bw(base_size = base_size, base_family = base_family) %+replace% 
+  theme_bw(base_size = base_size, base_family = base_family) %+replace%
     theme(axis.line = element_line(colour = "black"),
           axis.ticks.y=element_blank(),
           panel.grid.major.x = element_blank() ,
           # explicitly set the horizontal lines (or they will disappear too)
-          panel.grid.major.y = element_line( size=.1, color="black" ), 
+          panel.grid.major.y = element_line( size=.1, color="black" ),
           panel.grid.minor = element_blank(),
           panel.border     = element_blank(),
           panel.background = element_blank(),
           axis.title.y = element_text(angle=0)
-    )  
+    )
 }
 
-#' One of many ggplot themes that make illustrator easier to use later. 
+#' One of many ggplot themes that make illustrator easier to use later.
 #'
 #' ggplot needs to be stopped!
 #' @keywords ggplot2 plotting
@@ -69,21 +64,21 @@ theme_nyt_no_horiz <- function(base_size = 12, base_family = "Helvetica"){
 #' @examples
 #' ggplot(...) + theme_nyt_vert_horiz()
 theme_nyt_vert_horiz <- function(base_size = 12, base_family = "Helvetica"){
-  theme_bw(base_size = base_size, base_family = base_family) %+replace% 
+  theme_bw(base_size = base_size, base_family = base_family) %+replace%
     theme(axis.line = element_line(colour = "black"),
           axis.ticks.y=element_blank(),
-          panel.grid.major.x = element_line( size=.1, color="black" ), 
+          panel.grid.major.x = element_line( size=.1, color="black" ),
           # explicitly set the horizontal lines (or they will disappear too)
-          panel.grid.major.y = element_line( size=.1, color="black" ), 
+          panel.grid.major.y = element_line( size=.1, color="black" ),
           panel.grid.minor = element_blank(),
           panel.border     = element_blank(),
           panel.background = element_blank(),
           axis.title.y = element_text(angle=0)
-    )  
+    )
 }
 
 
-#' One of many ggplot themes that make illustrator easier to use later. 
+#' One of many ggplot themes that make illustrator easier to use later.
 #'
 #' ggplot needs to be stopped!
 #' @keywords ggplot2 plotting
@@ -133,5 +128,3 @@ slot_in <- function(vec, pos, val){
   end          <- vec[ (place_in_vec + 1) : size]
   c(begining, val, end)
 }
-
-
