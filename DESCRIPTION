@@ -15,8 +15,11 @@ Depends:
     reshape2,
     zoo,
     lubridate,
-    scales
+    scales,
+    dplyr,
+    readr
 Imports:
+    readr,
 	dplyr,
     ggplot2,
     tidyr,

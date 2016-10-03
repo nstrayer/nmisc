@@ -6,6 +6,8 @@
 #' @import tidyr
 #' @import stringr
 #' @import ggplot2
+#' @import dplyr
+#' @import readr
 #' @import utils
 #' @import reshape2
 #' @import zoo
